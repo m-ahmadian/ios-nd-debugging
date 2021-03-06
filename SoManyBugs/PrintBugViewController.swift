@@ -34,6 +34,7 @@ class PrintBugViewController: UIViewController {
         if bugs.count < maxBugs {
             let newBug = bugFactory.createBug()
             bugs.append(newBug)
+            view.addSubview(newBug)
             moveBugsAnimation()
         }
     }
@@ -81,6 +82,8 @@ extension PrintBugViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake { disperseBugsAnimation() }
     }
-    @objc func handleSingleTap(_ recognizer: UITapGestureRecognizer) { addBugToView() }
+    @objc func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
+        addBugToView()
+    }
 }
 
