@@ -87,3 +87,21 @@ extension PrintBugViewController {
     }
 }
 
+
+
+extension PrintBugViewController {
+    
+    override var description: String {
+        return "PrintBugViewController contains \(bugs.count) bugs\n"
+    }
+    
+    override var debugDescription: String {
+        var index = 0
+        var debugString = "PrintBugViewController contains \(bugs.count) bugs...\n"
+        for bug in bugs {
+            debugString = debugString + "Bug\(index): \(bug.frame)\n"
+            index += 1
+        }
+        return debugString
+    }
+}
