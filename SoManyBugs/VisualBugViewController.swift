@@ -40,7 +40,10 @@ class VisualBugViewController: UIViewController {
     }
 
     func emptyBugsFromView() {
-        // TODO: Empty the bugs from view!
+        for bug in bugs {
+            bug.removeFromSuperview()
+        }
+        self.bugs.removeAll(keepingCapacity: true)
     }
     
     // MARK: View Animations
