@@ -55,7 +55,6 @@ class BreakpointBugViewController: UIViewController {
                 bug.frame = CGRect(x: randomPosition.x - bug.frame.size.width/1.5, y: randomPosition.y - bug.frame.size.height/1.5, width: BugFactory.bugSize.width, height: BugFactory.bugSize.height)
             }
         }
-        addBugToView()
     }
     
     func disperseBugsAnimation() {
@@ -85,6 +84,17 @@ extension BreakpointBugViewController {
     }
     @objc func handleSingleTap(_ recognizer: UITapGestureRecognizer) {
         addBugToView()
-        addBugToView()
+    }
+}
+
+
+extension BreakpointBugViewController {
+    
+    override var description: String {
+        return "Hello, from Printable"
+    }
+    
+    override var debugDescription: String {
+        return "Hello, from DebugPrintable"
     }
 }
