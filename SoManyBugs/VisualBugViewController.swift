@@ -57,7 +57,7 @@ class VisualBugViewController: UIViewController {
     func disperseBugsAnimation() {
         UIView.animate(withDuration: disperseDuration, animations: { () -> Void in
             for bug in self.bugs {
-                let offScreenPosition = CGPoint(x: (bug.center.x - self.view.center.x) * -20, y: (bug.center.y - self.view.center.y) * -20)
+                let offScreenPosition = CGPoint(x: (bug.center.x - self.view.center.x) * 20, y: (bug.center.y - self.view.center.y) * 20)
                 bug.frame = CGRect(x: offScreenPosition.x, y: offScreenPosition.y, width: BugFactory.bugSize.width, height: BugFactory.bugSize.height)
             }
             }, completion: { (finished) -> Void in
