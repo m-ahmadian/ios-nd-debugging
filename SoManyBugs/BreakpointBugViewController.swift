@@ -15,7 +15,7 @@ class BreakpointBugViewController: UIViewController {
     // MARK: Properties
     
     let bugFactory = BugFactory.sharedInstance()
-    let maxBugs = 0
+    let maxBugs = 100
     let moveDuration = 3.0
     let disperseDuration = 1.0    
     var bugs = [UIImageView]()
@@ -34,6 +34,7 @@ class BreakpointBugViewController: UIViewController {
         if bugs.count < maxBugs {
             let newBug = bugFactory.createBug()
             bugs.append(newBug)
+            view.addSubview(newBug)
             moveBugsAnimation()
         }
     }
